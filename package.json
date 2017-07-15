@@ -7,7 +7,7 @@
     "dotenv": "./cli.js"
   },
   "dependencies": {
-    "dotenv": "^4.0.0",
+    "dotenv": "^4.0.0"
   },
   "license": "MIT",
   "main": "cli.js",
