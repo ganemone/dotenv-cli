@@ -1,7 +1,7 @@
 {
   "name": "@ganemone/dotenv-cli",
   "description": "Run commands with environment variables loaded",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "author": "ganemone",
   "bin": {
     "dotenv": "./cli.js"
