@@ -2,13 +2,24 @@
 
 const path = require('path');
 const dotenv = require('dotenv');
+const spawn = require('child_process').spawn;
+const argv = process.argv;
+
 dotenv.load({path: '.env'});
-const child = spawn(argv._[0], argv._.slice(1), {
+let child = spawn(argv[2], argv.slice(3), {
   stdio: 'inherit',
-}).on('exit', function(exitCode) {
-  child = null;
+})
+
+child.on('exit', function(exitCode) {
   process.exit(exitCode);
 });
-process.on('exit', () => {
-  child && child.kill();
-});
+
+process.on('SIGTERM', function() {
+  child.kill();
+  process.exit();
+}); 
+
+process.on('SIGINT', function() {
+  child.kill('SIGINT');
+  process.exit();
+}); 
