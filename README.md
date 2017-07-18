@@ -3,7 +3,7 @@
 ## Installing
 
 ```bash
-$ npm install dotenv-cli 
+$ npm install @ganemone/dotenv-cli 
 ```
 
 ## Usage
